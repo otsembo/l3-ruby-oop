@@ -1,6 +1,6 @@
 # super class
 class Computer
-    attr_Accessor :model, :country, :year
+    attr_accessor :model, :country, :year
     
     def initialize(model, country, year)
         @model = model
@@ -15,5 +15,26 @@ class Computer
 end
 
 # TODO: Implement class that inherits from Computer class
+class Dell < Computer
+end
+
+xps = Dell.new("XPS 13", "USA", 2022)
+xps.print_computer
+
+class Lenovo < Computer
+
+    def print_computer
+        puts "This is better than #3"
+    end
+
+    def original_print_computer
+        self.print_computer
+    end
+
+end
+
+yoga = Lenovo.new("Yoga 13", "USA", 2023)
+yoga.print_computer
+yoga.original_print_computer
 
 # TODO: Use the super keyword to access attributes and methods from Computer
